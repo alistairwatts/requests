@@ -1,10 +1,18 @@
 Release History
 ===============
 
-dev
----
+2.32.6 (2026-04-29)
+-------------------
 
-- \[Short description of non-trivial change.\]
+**Security**
+- CVE-2026-25645 ``requests.utils.extract_zipped_paths`` now extracts
+  contents to a non-deterministic location to prevent malicious file
+  replacement. This does not affect default usage of Requests, only
+  applications calling the utility function directly.
+
+**Bugfixes**
+- Fixed test cleanup for CVE-2026-25645 to avoid leaving unnecessary
+  files in the tmp directory. (#7305)
 
 2.32.5 (2025-08-18)
 -------------------
